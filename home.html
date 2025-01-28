@@ -63,14 +63,43 @@
         <!-- Projects Section -->
         <section id="projects" class="interactive-section">
             <h2>Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <h3>YouTube Data Analyzer</h3>
-                    <p>A Python app that analyzes YouTube data, using libraries like Numpy, tkinter, and Matplotlib.</p>
+            <div class="project-carousel">
+                <!-- Left Arrow -->
+                <button class="arrow-btn left-arrow" onclick="moveSlide(-1)">&#10094;</button>
+
+                <div class="projects-scroll">
+                    <!-- Project Button 1: Cuba Rework -->
+                    <button class="project-btn" onclick="openProjectModal('project-1')">Hearts of Iron IV - Cuba Rework</button>
+
+                    <!-- Project Button 2: Hearts of Durasteel -->
+                    <button class="project-btn" onclick="openProjectModal('project-2')">Hearts of Iron IV - Hearts of Durasteel</button>
+
+                    <!-- Project Button 3: Sabacc -->
+                    <button class="project-btn" onclick="openProjectModal('project-3')">Sabacc</button>
+
+                    <!-- Project Button 4: YouTube Analytics Analyser -->
+                    <button class="project-btn" onclick="openProjectModal('project-4')">YouTube Analytics Analyser</button>
+
+                    
                 </div>
-                <div class="project-card">
-                    <h3>Star Wars Game Mod</h3>
-                    <p>Collaborated with a team to create a strategy game mod, specifically coding the Neutral Systems.</p>
+
+                <!-- Right Arrow -->
+                <button class="arrow-btn right-arrow" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+
+            <!-- Modal for Project Details -->
+            <div id="project-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeProjectModal()">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-left">
+                            <img id="modal-image" src="images/project-placeholder.jpg" alt="Project Image">
+                        </div>
+                        <div class="modal-right">
+                            <h2 id="modal-title">Project Title</h2>
+                            <p id="modal-text">Detailed project description goes here. Replace this with text related to the project.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,5 +112,6 @@
     <footer>
         <p>&copy; 2025 Joshua Anderson.</p>
     </footer>
+    <script src="interaction.js"></script>
 </body>
 </html>
