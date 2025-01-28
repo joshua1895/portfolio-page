@@ -23,22 +23,55 @@ header {
     padding: 1rem 0;
 }
 
-header nav ul {
+/* Nav Container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Left Nav (Sections) */
+.nav-left {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 1.5rem;
 }
 
-header nav ul li a {
+.nav-left li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #00bfff; /* Lighter blue on hover */
+.nav-left li a:hover {
+    color: #a6eef5; /* Lighter blue on hover */
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-right li a {
+    display: inline-block;
+    width: 30px; /* Adjust width of the icons */
+    height: 30px; /* Adjust height to maintain aspect ratio */
+}
+
+.nav-right li a img {
+    width: 100%; /* Make image fit within the button container */
+    height: 100%;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-right li a:hover img {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 /* Main Sections */
@@ -62,43 +95,46 @@ section p {
     font-size: 1rem;
 }
 
-/* About Section */
+/* Who I Am Section */
 .about-section {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     padding: 4rem 2rem;
     text-align: left;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .about-container {
     display: flex;
-    align-items: center;
     gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .about-image {
-    flex: 1;
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.about-text {
-    flex: 2;
-    max-width: 600px;
+.about-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .about-text h1 {
-    margin-bottom: 1rem;
     color: #3d9fa8;
 }
 
 .about-text p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
 }
 
 /* Social Media Buttons */
