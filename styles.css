@@ -4,76 +4,78 @@
     box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
-    font-family: sans-serif; /* Placeholder font */
+    font-family: 'YourFont', sans-serif; /* Placeholder font */
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    margin: 0;
     background-image: url('images/personal/adrien-olichon-gOdavfpH-3s-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* Header */
+/* Header Styles */
 header {
     background-color: #3d9fa8; /* Updated blue accent */
     color: #fff;
     padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
-/* Nav Container */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Left Nav (Sections) */
-.nav-left {
+/* Navigation Bar */
+nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-left li a {
+.nav-left li {
+    display: inline-block;
+}
+
+.nav-left a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-.nav-left li a:hover {
+.nav-left a:hover {
     color: #a6eef5; /* Lighter blue on hover */
 }
 
 .nav-right {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
-.nav-right li a {
+.nav-right li {
     display: inline-block;
-    width: 30px; /* Adjust width of the icons */
-    height: 30px; /* Adjust height to maintain aspect ratio */
+    margin-left: 10px;
 }
 
 .nav-right li a img {
-    width: 100%; /* Make image fit within the button container */
-    height: 100%;
-    border-radius: 0.5rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
 .nav-right li a:hover img {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1);
 }
 
+/* Section Styles */
 section {
     padding: 4rem 2rem;
     text-align: center;
@@ -81,6 +83,8 @@ section {
     border-radius: 8px;
     margin: 2rem auto;
     max-width: 900px;
+    position: relative;
+    top: 80px;
 }
 
 section h1, section h2 {
@@ -88,182 +92,42 @@ section h1, section h2 {
     color: #3d9fa8;
 }
 
-section p {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1rem;
-}
-
-/* About Section */
-.about-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    position: relative;
-}
-
-.about-text {
-    max-width: 600px;
-    z-index: 2;
-}
-
-.about-image img {
-    max-width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-    transform: scale(1.1);
-}
-
-/* Skills Section */
+/* Interactive Section */
 .interactive-section {
     padding: 4rem 2rem;
-    background-color: #fff;
+    background-color: #f1f1f1;
 }
 
-.skill-cards {
+.skill-cards, .testimonial-cards, .projects-scroll {
     display: flex;
-    gap: 2rem;
-    justify-content: space-around;
+    gap: 1.5rem;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.skill-card {
-    background-color: #3d9fa8;
-    color: white;
+.skill-card, .testimonial-card {
+    background-color: #fff;
+    color: #333;
     padding: 2rem;
     width: 250px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.skill-card:hover {
+.skill-card:hover, .testimonial-card:hover {
     transform: translateY(-10px);
-    background-color: #00bfff;
-}
-
-.skill-card h3 {
-    margin-bottom: 1rem;
-}
-
-/* Projects Section */
-.interactive-section {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-/* Project Carousel Container */
-.project-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden; /* Hide overflow to create the scrolling effect */
-    width: 100%;
-}
-
-/* Arrows */
-.arrow-btn {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.left-arrow {
-    position: absolute;
-    left: -40px; /* Position to the left of the buttons */
-}
-
-.right-arrow {
-    position: absolute;
-    right: -40px; /* Position to the right of the buttons */
-}
-
-/* Project Buttons Container (Scrollable) */
-.projects-scroll {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    padding: 10px 0;
-}
-
-/* Individual Project Button */
-.project-btn {
     background-color: #3d9fa8;
     color: white;
-    border: none;
-    padding: 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    width: 200px; /* Same width for each button */
-    height: 150px; /* Same height for each button */
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s, flex-grow 0.3s ease; /* Smooth transition */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; /* Allow the button to grow or shrink */
 }
 
-/* Hover Effect */
-.project-btn:hover {
-    background-color: #a6eef5;
-    transform: scale(1.05); /* Slight scaling effect */
-    flex-grow: 1.5; /* Expand the hovered project */
+.skill-card h3, .testimonial-card h3 {
+    margin-top: 1rem;
+    font-style: italic;
 }
 
-/* Shrink the Other Buttons on Hover */
-.projects-scroll .project-btn:hover ~ .project-btn,
-.projects-scroll .project-btn:hover {
-    flex-grow: 0.8; /* Shrink other projects when one is hovered */
-}
-
-/* Make All Buttons Full Height of the Container */
-.projects-scroll {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 10px 0;
-    align-items: stretch; /* Ensure buttons stretch to the height of the container */
-}
-
-/* Optional: Adjust Scrollbar Appearance for Horizontal Scrolling */
-.projects-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
-/* Modal Styling */
+/* Modal for Projects */
 .modal {
     display: none;
     position: fixed;
@@ -274,6 +138,7 @@ section p {
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    z-index: 9999; /* Ensure it's on top */
 }
 
 .modal-content {
@@ -282,44 +147,111 @@ section p {
     border-radius: 8px;
     display: flex;
     flex-direction: row;
-    width: 80%; /* Increase modal width to 80% of the screen */
-    height: 80%; /* Increase modal height to 80% of the screen */
-    max-width: 1200px; /* Optional: Add a max width to prevent it from being too large on wide screens */
-    max-height: 900px; /* Optional: Add a max height to prevent it from being too tall */
-    overflow: auto; /* Allows scrolling if content exceeds modal size */
+    width: 80%;
+    max-width: 1200px;
 }
 
-/* Optional: Adjust modal image and text size for better responsiveness */
 .modal-left img {
-    max-width: 50%; /* Adjust image size */
-    height: auto;
+    max-width: 50%;
 }
 
 .modal-right {
-    max-width: 50%; /* Adjust the text section width */
-    overflow-y: auto; /* Allow scrolling if content is too long */
+    max-width: 50%;
 }
 
-/* Close button */
 .close-btn {
     font-size: 2rem;
     cursor: pointer;
     color: #3d9fa8;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 20px;
+}
+
+/* Contact Section */
+.contact-button {
+    background-color: #3d9fa8;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 
-/* Footer */
+.about-image img {
+    max-width: 200px; /* Set a max-width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.contact-button:hover {
+    background-color: #a6eef5;
+}
+
+/* Footer Styles */
 footer {
-    background-color: #3d9fa8;
-    color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-footer p {
-    font-size: 0.9rem;
+/* Scroll Effect for Projects */
+.project-carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #3d9fa8;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.project-btn {
+    background-color: #3d9fa8;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #a6eef5;
+}
+
+/* Scroll Effect for Skills and Projects */
+.skills-scroll, .projects-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.skills-scroll::-webkit-scrollbar, .projects-scroll::-webkit-scrollbar {
+    display: none;
 }
